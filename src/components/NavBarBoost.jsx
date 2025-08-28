@@ -3,25 +3,36 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "../css/NavBar.css";
 import CartWidget from './CartWidget';
+import { NavLink } from 'react-router-dom';
 
 function NavBarBoost() {
   return (
-    <>
-      <Navbar bg="dark" data-bs-theme="dark">
-        <Container className="d-flex justify-content-between align-items-center">
-          <Navbar.Brand href="#home"><img src='../logo-boca.png' alt='Logo' /></Navbar.Brand>
+    <Navbar bg="dark" data-bs-theme="dark" expand="md" collapseOnSelect>
+      <Container>
 
-          <Nav className="ms-auto">
-            <Nav.Link href="#nuevo">NUEVO</Nav.Link>
-            <Nav.Link href="#futbol">FUTBOL</Nav.Link>
-            <Nav.Link href="#basquet">BASQUET</Nav.Link>
-            <Nav.Link href="#basquet">ACCESORIOS</Nav.Link>
+        <Navbar.Brand as={NavLink} to="/">
+          <img
+            src="../logo-boca.png"
+            alt="Logo"
+            style={{ height: '70px' }}
+          />
+        </Navbar.Brand>
+
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto me-3">
+            <Nav.Link as={NavLink} to="/">NUEVO</Nav.Link>
+            <Nav.Link as={NavLink} to="/categories/futbol">FÚTBOL</Nav.Link>
+            <Nav.Link as={NavLink} to="/categories/basquet">BÁSQUET</Nav.Link>
+            <Nav.Link as={NavLink} to="/categories/accesorios">ACCESORIOS</Nav.Link>
           </Nav>
-
-          <CartWidget/>
-        </Container>
-      </Navbar>
-    </>
+          <CartWidget />
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
