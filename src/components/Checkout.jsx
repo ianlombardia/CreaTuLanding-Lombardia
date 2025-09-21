@@ -2,6 +2,7 @@ import { collection, serverTimestamp, addDoc } from 'firebase/firestore';
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 import { db } from '../service/firebase';
+import Swal from 'sweetalert2';
 
 const Checkout = () => {
   const [buyer, setBuyer] = useState({});
@@ -21,7 +22,7 @@ const Checkout = () => {
 
   
     if (buyer.email !== validEmail) {
-      alert('⚠️ Los correos no coinciden. Verificalos y volvé a intentarlo.');
+      Swal.fire("⚠️ Los correos no coinciden. Verificalos y volvé a intentarlo.");
       return;
     }
 

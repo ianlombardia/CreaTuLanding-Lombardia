@@ -3,18 +3,33 @@ import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 import '../css/ItemDetail.css';
+import { toast } from 'react-hot-toast';
+
+
 
 const ItemDetail = ({ detalle }) => {
   const [comprar, setComprar] = useState(false);
-  const { addItem } = useContext(CartContext);
+  const { addItem, itemQuantity } = useContext(CartContext);
 
   const onAdd = (cantidad) => {
-    setComprar(true);
-    addItem(detalle, cantidad);
-  };
+  setComprar(true);
+  addItem(detalle, cantidad);
+  toast.success(
+  `Se agregó ${cantidad} unidad${cantidad > 1 ? 'es' : ''} al carrito`,
+  {
+    position: "top-right",
+    duration: 3000,
+  }
+);
+};
+  
+const stockActualizado = detalle.stock - itemQuantity(detalle.id);
+
 
   return (
     <div className="detalle-container">
+  
+
       <div className="detalle-card">
         <div className="detalle-img">
           <img src={detalle.image} alt={detalle.name} />
@@ -24,7 +39,7 @@ const ItemDetail = ({ detalle }) => {
           <h2 className="detalle-titulo">{detalle.name}</h2>
           <p className="detalle-descripcion">{detalle.description}</p>
           <p className="detalle-precio">${detalle.price},00</p>
-          <p className="detalle-stock">Stock disponible: {detalle.stock}</p>
+          <p className="detalle-stock">Stock disponible: {stockActualizado}</p>
 
           {comprar ? (
             <Link
@@ -35,7 +50,7 @@ const ItemDetail = ({ detalle }) => {
               🛒 Ir al Carrito
             </Link>
           ) : (
-            <ItemCount stock={detalle.stock} onAdd={onAdd} />
+            <ItemCount stock={stockActualizado} onAdd={onAdd} />
           )}
         </div>
       </div>

@@ -1,13 +1,11 @@
-
-![app](/public/readme.app.png)
-
-
 # 12 STORE
 
 Club Atlético Boca Juniors
 Pasión, historia y gloria. Bienvenido al sitio oficial de productos y novedades del club más grande.
 
 
+
+![app](/public/readme.app.png)
 
 
 
@@ -25,6 +23,7 @@ Pasión, historia y gloria. Bienvenido al sitio oficial de productos y novedades
 -[React Router Dom](): utiliazada para la navegacion por rutas
 -[React Boostrap](): utilizada para el styling de la app
 -[Fontawesome](): utilizada para los iconos 
+-[sweetalert2](): utilizada para las alertas
 
 
 Desarollado por Ian Lombardia

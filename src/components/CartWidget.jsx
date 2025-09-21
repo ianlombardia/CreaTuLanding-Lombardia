@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import {Badge} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import ItemCount from './ItemCount';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { getProducts } from "../mock/AsyncMock";
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import LoaderComponent from './LoaderComponent';
@@ -35,20 +34,6 @@ const ItemListContainer = ({ mensaje }) => {
             .finally(() => setLoader(false));
 
     }, [category]);
-
-    // useEffect(() => {
-    //     setLoader(true);
-    //     getProducts()
-    //         .then((res) => {
-    //             if (category) {
-    //                 setData(res.filter(prod => prod.category === category));
-    //             } else {
-    //                 setData(res);
-    //             }
-    //         })
-    //         .catch((error) => console.log(error, 'error'))
-    //         .finally(() => setLoader(false));
-    // }, [category]);
 
     const categoriaNombre = {
         futbol: 'FÚTBOL',
