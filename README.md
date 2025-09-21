@@ -1,12 +1,30 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![app](/public/readme.app.png)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 12 STORE
 
-## Expanding the ESLint configuration
+Club Atlético Boca Juniors
+Pasión, historia y gloria. Bienvenido al sitio oficial de productos y novedades del club más grande.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+
+### Instalación 
+
+1. Clonar repositorio.
+2. hacer el comando cd `ProyectoFinal-Lombardia` para moverse a la carpeta raiz del proyecto
+3. Instalar dependencias con el comando `npm install`
+4. Para ejecutar el proyecto de manera local ejecutar el comando `npm run dev`.
+
+
+### Librerias utilizadas
+
+-[Firebase](): utilizada como base de datos
+-[React Router Dom](): utiliazada para la navegacion por rutas
+-[React Boostrap](): utilizada para el styling de la app
+-[Fontawesome](): utilizada para los iconos 
+
+
+Desarollado por Ian Lombardia
