@@ -1,25 +1,25 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import "../css/NavBar.css";
 import CartWidget from './CartWidget';
 import { NavLink } from 'react-router-dom';
+import "../css/navbarB.css";
 
 function NavBarBoost() {
   return (
-    <Navbar bg="dark" data-bs-theme="dark" expand="md" collapseOnSelect>
+    <Navbar className="custom-navbar" expand="md" collapseOnSelect>
       <Container>
 
         <Navbar.Brand as={NavLink} to="/">
           <img
-            src="../logo-boca.png"
+            src="/logo-boca.png"
             alt="Logo"
             style={{ height: '70px' }}
           />
         </Navbar.Brand>
 
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler" />
 
 
         <Navbar.Collapse id="basic-navbar-nav">

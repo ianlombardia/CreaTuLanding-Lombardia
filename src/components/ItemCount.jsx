@@ -1,48 +1,65 @@
 import { useState, useEffect, use } from "react";
+import '../css/button.css'
 
 
 
 
 
 
-const ItemCount = () =>{
-const [count, setCount]= useState(0);
-const [compra,setCompra]= useState(false);  
+const ItemCount = ({ stock, onAdd }) => {
+    const [count, setCount] = useState(1);
 
 
-
-
-
-
-    // let count = 0;
     const sumar = () => {
-        setCount(count + 1);
+        if (count < stock) {
+            setCount(count + 1);
+
+        }
     }
 
-    const restar = () =>{
-        setCount(count -1);
-    }
-const comprarHandler = () =>{
-    serCompra(!compra);
-}
-useEffect(() => {
-    console.log("El componente se ha montado");
-}, []);
-useEffect(() => {
-    console.log("El componente se ha montado",compra);
-}, [compra]);
+    const restar = () => {
+        if (count > 0) {
+            setCount(count - 1);
 
-    return(
-        <div><button  onClick={restar}>-</button>
-        <span>{count}</span>
-        <button  onClick={sumar}>+</button>
-        <button  onClick={setCompra}>comprar</button>
+        }
+    }
+    const comprar = () => {
+        onAdd(count)
+    }
+
+    return (
+        <div className="d-flex flex-column align-items-center gap-3 mt-4">
+
+            <div className="d-flex align-items-center gap-3">
+                <button
+                    onClick={restar}
+                    className="btn btn-outline-warning fw-bold fs-4"
+                >
+                    -
+                </button>
+
+                <span className="fs-4 fw-semibold text-dark">{count}</span>
+
+                <button
+                    onClick={sumar}
+                    className="btn btn-outline-warning fw-bold fs-4"
+                >
+                    +
+                </button>
+            </div>
+
+            <button
+                disabled={stock === 0 || count === 0}
+                onClick={comprar}
+                className={`btn btn-bac fw-bold text-uppercase px-4 py-2 shadow ${stock === 0 || count === 0 ? 'disabled' : ''
+                    }`}
+            >
+                Comprar
+            </button>
         </div>
+    );
 
-
-    )
-
-    }
+}
 
 
 

@@ -5,7 +5,7 @@ const ErrorComponent = () => {
   return (
     <div style={styles.container}>
       <img
-        src="../error.png"
+        src="/error.png"
         alt="Página no encontrada"
         style={styles.image}
       />

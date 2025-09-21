@@ -215,10 +215,10 @@ export const getProducts = ()=>{
 }
 
 export const getItem = (id) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            let prod = productos.find((item) => item.id === id)
-            resolve(prod)
-        }, 2000)
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      let prod = productos.find((item) => item.id === id);
+      resolve(prod);
+    }, 1000);
     });
 }
