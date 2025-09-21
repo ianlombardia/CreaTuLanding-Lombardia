@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Footer.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link } from 'react-router-dom';
 
 
 function Footer() {
@@ -18,10 +19,10 @@ function Footer() {
           <div className="columna-footer col-md-4 mb-3">
             <h5 className="titulo-footer">Secciones</h5>
             <ul className="lista-links">
-              <li><a href="/" className="link-footer">Nuevo</a></li>
-              <li><a href="/categories/futbol" className="link-footer">Fútbol</a></li>
-              <li><a href="/categories/basquet" className="link-footer">Básquet</a></li>
-              <li><a href="/categories/accesorios" className="link-footer">Accesorios</a></li>
+              <li><Link to="/" className="link-footer">Nuevo</Link></li>
+              <li><Link to="/categories/futbol" className="link-footer">Fútbol</Link></li>
+              <li><Link to="/categories/basquet" className="link-footer">Básquet</Link></li>
+              <li><Link to="/categories/accesorios" className="link-footer">Accesorios</Link></li>
             </ul>
           </div>
 
